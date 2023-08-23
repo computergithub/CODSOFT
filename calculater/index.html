@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>www.calculater.in</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Lobster&family=Press+Start+2P&display=swap" rel="stylesheet">
+<!-- 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap" rel="stylesheet">
+-->
+<link rel="stylesheet" href="calculater.css">
+</head>
+<body>
+    <nav><h1>Calculater</h1></nav>
+    <div class="container">
+    <div class="section">
+        <input type="text" class="input">
+        <div class="cal-row">
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>+</button>
+        </div>
+        <div class="cal-row">
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>/</button>
+        </div>  <div class="cal-row">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>*</button>
+        </div>  <div class="cal-row">
+            <button>0</button>
+            <button>.</button>
+            <button>00</button>
+            <button>-</button>
+        </div>
+        <div class="cal-row equal-cencel">
+            <button style="background-color: #000078;">=</button>
+            <button style="background-color:red">AC</button>
+        </div>
+    </div>
+</div>
+<script>
+    
+        let string='';
+        let buttons=document.querySelectorAll('button')
+        Array.from(buttons).forEach((item)=>{
+            item.addEventListener('click',(event)=>{
+
+                if(event.target.innerHTML=='='){
+                    string=eval(string)
+                    document.querySelector('.input').value=string;
+                }else{
+                string=string+event.target.innerHTML;
+                document.querySelector('.input').value=string;
+
+            }if(event.target.innerHTML=='AC'){
+                string='';
+                document.querySelector('.input').value=string;                    
+            }
+            })
+        })
+    </script>
+</body>
+</html>
